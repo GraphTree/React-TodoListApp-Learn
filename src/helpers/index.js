@@ -2,11 +2,8 @@
 import {collatedTasks} from '../constants';
 
 export const getCollatedTasksExist = selecteProject => {
-<<<<<<< HEAD
-    // collatedTasksExist will be added later
-    // test coment
-=======
+
     // assume we added css file
->>>>>>> master
+    //test for rebase amend
     collatedTasksExist.find(task => task.key === selectedProject); 
 }
