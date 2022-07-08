@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useInsertionEffect} from 'react';
 import {firebase} from '../firebase';
 import {collatedTasksExist} from '../helpers';
 import dayjs from 'dayjs';
@@ -42,4 +42,15 @@ export const useTasks = selectedProject => {
 
 
     return {tasks, archivedTasks}
+}
+
+export const userProjects = () => {
+    const [projects, setProjects] = useState([]);
+
+    useEffect(()=> {
+        firebase
+            .firestore()
+            .collection('projects')
+            .where('userId', '==', 'herick')
+    }, []);
 }
